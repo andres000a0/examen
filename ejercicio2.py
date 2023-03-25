@@ -12,12 +12,13 @@ cuentas_cersei = [
 ]
 
 for cuenta in cuentas_cersei:
-    saldo = float(input(f"Ingrese el saldo de la cuenta {cuenta['numero_cuenta']}: "))
+    saldo = float(
+        input(f"Ingrese el saldo de la cuenta {cuenta['numero_cuenta']}: "))
     cuenta["saldo"] = saldo
 
-cuentas_ordenadas = sorted(cuentas_cersei, key=lambda k: k["saldo"], reverse=True)
+cuentas_ordenadas = sorted(
+    cuentas_cersei, key=lambda k: k["saldo"], reverse=True)
 
 print("Cuentas ordenadas de mayor a menor saldo:")
 for i, cuenta in enumerate(cuentas_ordenadas):
     print(f"{i+1}. Cuenta {cuenta['numero_cuenta']}: ${cuenta['saldo']:.2f}")
-        
